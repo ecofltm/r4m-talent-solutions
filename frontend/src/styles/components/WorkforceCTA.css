@@ -1,0 +1,216 @@
+/* =========================================================
+   WORKFORCE CTA SECTION
+========================================================= */
+
+.r4m-workforce {
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 0 100px;
+  font-family: 'Montserrat', sans-serif;
+  color: #1c1c1c;
+  position: relative;
+  z-index: 5;
+}
+
+.r4m-workforce__container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Headline Typography */
+.r4m-workforce__title {
+  font-size: clamp(38px, 4.6vw, 54px);
+  font-weight: 900;
+  color: #111111;
+  line-height: 1.1;
+  margin: 0 0 48px 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.r4m-workforce__title .orange {
+  color: #f37021;
+}
+
+/* Two-column grid */
+.r4m-workforce__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left Column: Video Player & CTA */
+.r4m-workforce__media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.r4m-workforce__video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: #d6d6d6;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.r4m-workforce__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play Button Overlay */
+.r4m-workforce__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+  pointer-events: none;
+}
+
+.r4m-workforce__play-btn i {
+  font-size: 40px;
+  color: #ffffff;
+  margin-left: 4px;
+}
+
+.r4m-workforce__video-wrapper:hover .r4m-workforce__play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Consultation Button */
+.r4m-workforce__cta {
+  margin-top: 24px;
+}
+
+.r4m-workforce__btn {
+  background: #f37021;
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(243, 112, 33, 0.3);
+}
+
+.r4m-workforce__btn:hover {
+  background: #e05e10;
+  transform: translateY(-2px);
+}
+
+/* Right Column: 3 Feature Cards */
+.r4m-workforce__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.r4m-workforce-card {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.r4m-workforce-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.r4m-workforce-card__icon-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #f37021;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(243, 112, 33, 0.25);
+}
+
+.r4m-workforce-card__icon-wrapper i {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.r4m-workforce-card__text h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 6px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.r4m-workforce-card__text p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .r4m-workforce {
+    padding: 60px 0;
+  }
+
+  .r4m-workforce__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .r4m-workforce__video-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .r4m-workforce__title {
+    font-size: 32px;
+  }
+
+  .r4m-workforce-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .r4m-workforce-card__icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .r4m-workforce-card__icon-wrapper i {
+    font-size: 22px;
+  }
+}

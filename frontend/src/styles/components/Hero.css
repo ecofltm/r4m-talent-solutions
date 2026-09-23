@@ -1,0 +1,769 @@
+:root {
+  --orange: #f37021;
+  --orange-hover: #e05e10;
+  --black: #0e0e0e;
+  --dark-gray: #1a1a1a;
+  --panel-gray-light: #777777;
+  --panel-gray-dark: #414141;
+}
+
+
+/* =========================================================
+   OUTER HERO SECTION
+========================================================= */
+
+.r4m-hero {
+  position: relative;
+  width: 100%;
+  background: var(--black);
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.r4m-hero__bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 800px;
+
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.r4m-hero__bg-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  display: block;
+}
+
+.r4m-hero__bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.75) 100%);
+}
+
+
+/* =========================================================
+   MAIN HERO CONTAINER
+========================================================= */
+
+.r4m-hero__container {
+  position: relative;
+  z-index: 100;
+
+  max-width: 1500px;
+  margin: 0 auto;
+
+  padding: 50px 32px 0;
+
+  width: 100%;
+  flex: 1;
+}
+
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.r4m-nav {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 64px);
+  max-width: 1436px;
+
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 4px;
+
+  padding: 14px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+
+  z-index: 1000;
+
+  transition: all 0.3s ease;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.r4m-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+}
+
+.r4m-logo__img {
+  height: 42px;
+  width: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+
+/* =========================================================
+   NAVIGATION MENU
+========================================================= */
+
+.r4m-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.r4m-menu__link {
+  font-size: 14.5px;
+  font-weight: 700;
+
+  color: #1c1c1c;
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  transition: color 0.2s ease;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.r4m-menu__link:hover {
+  color: var(--orange);
+}
+
+.r4m-chevron {
+  font-size: 11px;
+
+  color: #1c1c1c;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION TOGGLE
+========================================================= */
+
+.r4m-nav-toggle {
+  display: none;
+
+  background: transparent;
+
+  border: none;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  color: #1c1c1c;
+
+  padding: 4px;
+}
+
+
+/* =========================================================
+   MAIN HERO GRID
+========================================================= */
+
+.r4m-hero__main {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 36px;
+
+  align-items: flex-start;
+
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   LEFT HERO CONTENT
+========================================================= */
+
+.r4m-hero__left {
+  position: relative;
+
+  padding-top: 95px;
+  padding-bottom: 20px;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   HEADLINE
+========================================================= */
+
+.r4m-headline {
+  font-size: clamp(36px, 4.5vw, 56px);
+
+  font-weight: 900;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.5px;
+
+  margin: 0 0 20px;
+
+  font-family: 'Montserrat', sans-serif;
+
+  text-transform: uppercase;
+}
+
+.r4m-headline .orange {
+  color: var(--orange);
+
+  display: block;
+}
+
+.r4m-headline .white {
+  color: #ffffff;
+
+  display: block;
+}
+
+
+/* =========================================================
+   SUBTEXT
+========================================================= */
+
+.r4m-subtext {
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: #e0e0e0;
+
+  line-height: 1.6;
+
+  max-width: 440px;
+
+  margin: 0 0 32px;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
+
+.r4m-cta {
+  display: flex;
+
+  gap: 16px;
+
+  align-items: center;
+}
+
+.r4m-btn {
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  padding: 14px 30px;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+
+  display: inline-block;
+
+  text-align: center;
+}
+
+.r4m-btn--solid {
+  background-color: var(--orange);
+
+  color: #ffffff;
+
+  border: 2px solid var(--orange);
+}
+
+.r4m-btn--solid:hover {
+  background-color: var(--orange-hover);
+
+  border-color: var(--orange-hover);
+}
+
+.r4m-btn--outline {
+  background-color: transparent;
+
+  color: #ffffff;
+
+  border: 2px solid #ffffff;
+}
+
+.r4m-btn--outline:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   RIGHT HERO IMAGE & SLIDER
+========================================================= */
+
+.r4m-hero__right {
+  position: relative;
+  z-index: 50;
+  margin-bottom: -60px;
+}
+
+.r4m-hero__slider {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+}
+
+.r4m-hero__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+  z-index: 1;
+}
+
+.r4m-hero__photo.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Slide Dots Indicator */
+.r4m-hero__dots {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.r4m-hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.r4m-hero__dot.is-active {
+  background: var(--orange);
+  width: 24px;
+  border-radius: 10px;
+}
+
+
+
+/* =========================================================
+   DESKTOP ONLY
+   MOVE RIGHT PHOTO UP
+========================================================= */
+
+@media (min-width: 993px) {
+
+  .r4m-hero__right {
+    transform: translateY(-70px);
+  }
+
+}
+
+
+/* =========================================================
+   BOTTOM SECTION
+========================================================= */
+
+.r4m-hero__bottom {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background: var(--black);
+  margin-top: -60px;
+}
+
+
+/* =========================================================
+   BOTTOM GRID
+
+   LEFT  = 50%
+   RIGHT = 50%
+========================================================= */
+
+.r4m-bottom-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   BOTTOM LEFT
+========================================================= */
+
+.r4m-bottom-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  position: relative;
+  z-index: 90;
+}
+
+.r4m-feature--2 {
+  background: var(--panel-gray-dark);
+}
+
+
+/* =========================================================
+   FEATURE BOXES
+========================================================= */
+
+.r4m-feature {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 120px;
+  gap: 22px;
+
+  /*
+    This pushes the icon/text inward,
+    matching the second reference image.
+  */
+  padding: 28px 11%;
+}
+
+.r4m-feature--1 {
+  background: var(--panel-gray-light);
+}
+
+.r4m-feature--2 {
+  background: var(--panel-gray-dark);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.r4m-feature i {
+  color: var(--orange);
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.r4m-feature p {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+  max-width: 300px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =========================================================
+   BOTTOM RIGHT
+========================================================= */
+
+.r4m-bottom-right {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 70px;
+  background: var(--panel-gray-dark);
+  z-index: 0;
+}
+
+
+/* =========================================================
+   ORANGE ACCENT BAR
+========================================================= */
+
+.r4m-accent-bar {
+  position: relative;
+  background: var(--orange);
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+  z-index: 12;
+  top: -35px;
+}
+
+
+
+/* =========================================================
+   DESKTOP BOTTOM SECTION
+========================================================= */
+
+@media (min-width: 993px) {
+
+  .r4m-feature {
+    min-height: 120px;
+
+    padding: 28px 11%;
+
+    gap: 22px;
+  }
+
+  .r4m-feature i {
+    font-size: 30px;
+  }
+
+  .r4m-feature p {
+    font-size: 17px;
+
+    line-height: 1.35;
+  }
+
+  .r4m-bottom-right {
+    min-height: 120px;
+  }
+
+  .r4m-accent-bar {
+    width: 78%;
+
+    height: 40px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE (992px AND BELOW)
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .r4m-hero__bg-wrapper {
+    height: 100%;
+  }
+
+  /* Hero container */
+  .r4m-hero__container {
+    padding: 16px 16px 0;
+  }
+
+  /* Navigation */
+  .r4m-nav {
+    top: 12px;
+    width: calc(100% - 32px);
+    padding: 12px 18px;
+    margin-bottom: 20px;
+  }
+
+  .r4m-nav-toggle {
+    display: block;
+  }
+
+  /* Mobile navigation menu */
+  .r4m-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 8px 8px;
+    z-index: 100;
+  }
+
+  .r4m-menu.is-open {
+    display: flex;
+  }
+
+  /* Hero becomes one column */
+  .r4m-hero__main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 70px;
+  }
+
+  .r4m-hero__left {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  /* Right photo */
+  .r4m-hero__right {
+    margin-bottom: 0;
+    transform: none;
+    z-index: 25;
+  }
+
+  .r4m-hero__photo {
+    height: 320px;
+  }
+
+  /* Bottom section on mobile - clear negative margins */
+  .r4m-hero__bottom {
+    margin-top: 24px;
+    position: relative;
+    z-index: 30;
+    width: 100%;
+  }
+
+  .r4m-bottom-inner {
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100%;
+  }
+
+  .r4m-bottom-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Feature cards stacked vertically on mobile */
+  .r4m-feature {
+    min-height: auto;
+    padding: 16px 20px;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .r4m-feature i {
+    font-size: 22px;
+  }
+
+  .r4m-feature p {
+    font-size: 14px;
+    max-width: none;
+  }
+
+  /* Orange accent bar on mobile */
+  .r4m-bottom-right {
+    min-height: 36px;
+    background: var(--panel-gray-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  .r4m-accent-bar {
+    width: 80%;
+    height: 20px;
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .r4m-headline {
+    font-size: 32px;
+  }
+
+  .r4m-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .r4m-btn {
+    width: 100%;
+  }
+
+}

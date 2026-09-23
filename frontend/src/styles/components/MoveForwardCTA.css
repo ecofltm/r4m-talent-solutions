@@ -1,0 +1,203 @@
+/* =========================================================
+   MOVE FORWARD TOGETHER (DUAL CTA) SECTION
+========================================================= */
+
+.r4m-move-forward {
+  width: 100%;
+  background: #ffffff;
+  padding: 120px 20px 140px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.r4m-move-forward__wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Central Dark Box */
+.r4m-move-forward__box {
+  background: #3b3c3e;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 70px 50px 80px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.r4m-move-forward__title {
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.r4m-move-forward__subtitle {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 40px;
+}
+
+/* Dual Actions Layout */
+.r4m-move-forward__actions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.r4m-move-forward__action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.r4m-move-forward__btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 36px;
+  display: inline-block;
+  transition: all 0.25s ease;
+  min-width: 230px;
+  text-align: center;
+}
+
+/* Primary Button (Hire Talents) */
+.r4m-move-forward__btn--primary {
+  background: #f37021;
+  color: #ffffff;
+  border: 2px solid #f37021;
+}
+
+.r4m-move-forward__btn--primary:hover {
+  background: #e05e10;
+  border-color: #e05e10;
+  transform: translateY(-2px);
+}
+
+/* Outline / Black Button (Find Opportunities) */
+.r4m-move-forward__btn--outline {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.r4m-move-forward__btn--outline:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Sub-labels underneath buttons */
+.r4m-move-forward__note {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* Overlapping Image Cards */
+.r4m-move-forward__img-card {
+  position: absolute;
+  width: 360px;
+  height: 270px;
+  background: #e0e0e0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.r4m-move-forward__img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Top Right Image Position */
+.r4m-move-forward__img-card--top-right {
+  top: -50px;
+  right: 0;
+  z-index: 3;
+}
+
+/* Bottom Left Image Position */
+.r4m-move-forward__img-card--bottom-left {
+  bottom: -60px;
+  left: 0;
+  z-index: 3;
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+========================================================= */
+
+@media (max-width: 1080px) {
+  .r4m-move-forward__img-card {
+    width: 280px;
+    height: 210px;
+  }
+  
+  .r4m-move-forward__img-card--top-right {
+    top: -30px;
+    right: -10px;
+  }
+
+  .r4m-move-forward__img-card--bottom-left {
+    bottom: -40px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .r4m-move-forward {
+    padding: 70px 20px;
+  }
+
+  .r4m-move-forward__box {
+    padding: 50px 24px;
+  }
+
+  /* Position images statically on tablet/mobile so content is not obscured */
+  .r4m-move-forward__img-card {
+    position: relative;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100%;
+    max-width: 500px;
+    height: 240px;
+    margin: 0 auto 30px auto;
+  }
+
+  .r4m-move-forward__img-card--bottom-left {
+    margin: 30px auto 0 auto;
+  }
+
+  .r4m-move-forward__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .r4m-move-forward__btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

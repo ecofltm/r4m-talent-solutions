@@ -1,0 +1,12 @@
+{
+  "name": "r4m-talent-solutions",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend run start"
+  }
+}

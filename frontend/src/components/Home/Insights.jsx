@@ -1,0 +1,61 @@
+import "../../styles/components/Insights.css";
+
+const INSIGHTS_DATA = [
+  {
+    id: "businesses",
+    badge: "For Businesses",
+    title: "Hiring & Workforce Insights",
+    description: "Practical perspectives on recruitment, workforce planning, and business growth.",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
+    href: "#insights-businesses",
+  },
+  {
+    id: "talents",
+    badge: "For Talents",
+    title: "Career Advice",
+    description: "Practical perspectives on career growth, resume building, and job navigation.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+    href: "#insights-talents",
+  },
+];
+
+export default function Insights() {
+  return (
+    <section className="r4m-insights" id="insights">
+      <div className="r4m-insights__container">
+        {/* Header Block */}
+        <div className="r4m-insights__header">
+          <h2 className="r4m-insights__title">
+            Insights That Help<br />
+            You <span className="orange">Move Forward</span>
+          </h2>
+          <p className="r4m-insights__subtitle">
+            Practical insights, advice, and perspectives to help businesses make informed workforce decisions and talent navigate their next career opportunity.
+          </p>
+        </div>
+
+        {/* 2 Cards Grid */}
+        <div className="r4m-insights__grid">
+          {INSIGHTS_DATA.map((item) => (
+            <div className="r4m-insight-card" key={item.id}>
+              {/* Top Image Banner with Orange Badge */}
+              <div className="r4m-insight-card__image-wrapper">
+                <img src={item.image} alt={item.title} className="r4m-insight-card__img" />
+                <div className="r4m-insight-card__badge">{item.badge}</div>
+              </div>
+
+              {/* Bottom Card Content */}
+              <div className="r4m-insight-card__content">
+                <h3 className="r4m-insight-card__title">{item.title}</h3>
+                <p className="r4m-insight-card__desc">{item.description}</p>
+                <a href={item.href} className="r4m-insight-card__link">
+                  Read more
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

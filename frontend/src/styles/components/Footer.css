@@ -1,0 +1,221 @@
+/* =========================================================
+   FOOTER SECTION & PRE-FOOTER CTA
+========================================================= */
+
+.r4m-footer-section {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ---------------------------------------------------------
+   Pre-Footer CTA Banner
+--------------------------------------------------------- */
+.r4m-footer-cta {
+  background: #46484a;
+  padding: 44px 20px;
+  color: #ffffff;
+}
+
+.r4m-footer-cta__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.r4m-footer-cta__title {
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.r4m-footer-cta__btn {
+  background: #f37021;
+  color: #ffffff;
+  padding: 16px 42px;
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-radius: 0px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.r4m-footer-cta__btn:hover {
+  background: #e05e10;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   Main Footer Container
+--------------------------------------------------------- */
+.r4m-footer-main {
+  background: #000000;
+  color: #ffffff;
+  padding: 65px 20px 30px;
+}
+
+.r4m-footer-main__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 4-Column Grid */
+.r4m-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 50px;
+  align-items: start;
+}
+
+/* Column 1: Logo */
+.r4m-footer__col--brand {
+  display: flex;
+  align-items: flex-start;
+}
+
+.r4m-footer__logo {
+  max-width: 200px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+/* Column Headings */
+.r4m-footer__heading {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.2px;
+}
+
+/* Navigation Links */
+.r4m-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.r4m-footer__links li {
+  margin-bottom: 10px;
+}
+
+.r4m-footer__links a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.r4m-footer__links a:hover {
+  color: #f37021;
+}
+
+/* Contact & Address Text */
+.r4m-footer__text {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.r4m-footer__text a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.r4m-footer__text a:hover {
+  color: #f37021;
+}
+
+/* Divider */
+.r4m-footer__divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+}
+
+/* Sub-footer Bottom Bar */
+.r4m-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.r4m-footer__copyright {
+  font-size: 13.5px;
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Social Media Icons */
+.r4m-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.r4m-footer__socials a {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.r4m-footer__socials a:hover {
+  color: #f37021;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 992px) {
+  .r4m-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .r4m-footer-cta__container {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .r4m-footer-cta__btn {
+    width: 100%;
+  }
+
+  .r4m-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .r4m-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}
