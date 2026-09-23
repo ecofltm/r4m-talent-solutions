@@ -161,6 +161,11 @@
   padding: 0;
 }
 
+.r4m-menu__item-wrap {
+  display: flex;
+  align-items: center;
+}
+
 .r4m-menu__link {
   font-size: 14.5px;
   font-weight: 700;
@@ -179,7 +184,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.r4m-menu__link:hover {
+.r4m-menu__link:hover,
+.r4m-menu__link.is-active {
   color: var(--orange);
 }
 
@@ -189,6 +195,168 @@
   color: #1c1c1c;
 
   font-weight: 700;
+}
+
+/* =========================================================
+   SERVICES MEGA DROPDOWN & BACKDROP BLUR
+========================================================= */
+
+.r4m-mega-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 998;
+  animation: fadeInOverlay 0.25s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.r4m-mega-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  padding-top: 105px; /* Black background extends all the way to the top of the screen */
+  padding-bottom: 50px;
+  padding-left: 32px;
+  padding-right: 32px;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  font-family: 'Montserrat', sans-serif;
+  animation: slideDownMega 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDownMega {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.r4m-mega-menu__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+}
+
+/* Left Featured Section */
+.r4m-mega__featured {
+  width: 290px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.r4m-mega__img-wrapper {
+  width: 100%;
+  height: 160px;
+  background: #2a2a2a;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.r4m-mega__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.r4m-mega__category {
+  color: #f37021;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.r4m-mega__desc {
+  color: #d0d0d0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+  font-weight: 400;
+}
+
+.r4m-mega__btn {
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.r4m-mega__btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Vertical Divider Line */
+.r4m-mega__divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 10px;
+}
+
+/* Right 2x2 Services Grid */
+.r4m-mega__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 48px;
+  align-content: start;
+  padding-top: 6px;
+}
+
+.r4m-mega__item {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.r4m-mega__item:hover .r4m-mega__item-title {
+  color: #f37021;
+}
+
+.r4m-mega__item-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.r4m-mega__item-desc {
+  color: #b0b0b0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
 }
 
 
@@ -642,6 +810,36 @@
     width: calc(100% - 32px);
     padding: 12px 18px;
     margin-bottom: 20px;
+  }
+
+  /* Mega Menu Mobile Adjustment */
+  .r4m-mega-menu {
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .r4m-mega-menu__container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .r4m-mega__featured {
+    width: 100%;
+  }
+
+  .r4m-mega__divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+
+  .r4m-mega__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .r4m-nav-toggle {
