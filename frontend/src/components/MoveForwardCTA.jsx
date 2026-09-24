@@ -1,4 +1,4 @@
-import "../../styles/components/MoveForwardCTA.css";
+import "../styles/components/MoveForwardCTA.css";
 
 export default function MoveForwardCTA() {
   return (

@@ -7,7 +7,7 @@ import WorkforceCTA from '../components/Home/WorkforceCTA'
 import ForTalents from '../components/Home/ForTalents'
 import Insights from '../components/Home/Insights'
 import Vision from '../components/Home/Vision'
-import MoveForwardCTA from '../components/Home/MoveForwardCTA'
+import MoveForwardCTA from '../components/MoveForwardCTA'
 import Footer from '../components/Footer'
 
 function Home() {
