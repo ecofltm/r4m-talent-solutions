@@ -1,26 +1,27 @@
 import { useState, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import r4mLogo from '../assets/r4m-logo.png';
 
 const ABOUT_ITEMS = [
   {
     title: 'Our Story',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#about',
+    path: '/about#story',
   },
   {
     title: 'Our Mission and Vision',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#vision',
+    path: '/about#vision',
   },
   {
     title: 'Our Target Market',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#about',
+    path: '/about#target-market',
   },
   {
     title: 'Our Core Values',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#about',
+    path: '/about#core-values',
   },
 ];
 
@@ -28,22 +29,22 @@ const SERVICES_ITEMS = [
   {
     title: 'Manpower Outsourcing',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#services',
+    path: '/#services',
   },
   {
     title: 'Recruitment Process Outsourcing',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#services',
+    path: '/#services',
   },
   {
     title: 'Specialized & Technical Roles',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#services',
+    path: '/#services',
   },
   {
     title: 'Find the Right Solutions',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    href: '#services',
+    path: '/#services',
   },
 ];
 
@@ -51,58 +52,59 @@ const INDUSTRIES_ITEMS = [
   {
     title: 'Logistics & Supply Chain',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'Manufacturing',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'Retail & FMCG',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'Hospitality, Food & Beverage',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'Construction & Engineering',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'E-Commerce',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'Financial Services & FinTech',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
   {
     title: 'Technology & Digital',
     desc: 'We connect businesses with the right talent through workforce solutions',
-    href: '#industries',
+    path: '/#industries',
   },
 ];
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about', hasDropdown: true },
-  { label: 'Services', href: '#services', hasDropdown: true },
-  { label: 'Industries', href: '#industries', hasDropdown: true },
-  { label: 'Jobs', href: '#jobs' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Home', path: '/' },
+  { label: 'About Us', path: '/about', hasDropdown: true },
+  { label: 'Services', path: '/#services', hasDropdown: true },
+  { label: 'Industries', path: '/#industries', hasDropdown: true },
+  { label: 'Jobs', path: '/#jobs' },
+  { label: 'Contact Us', path: '/#contact' },
 ];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const timeoutRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleMouseEnter = (label) => {
     if (label === 'About Us' || label === 'Services' || label === 'Industries') {
@@ -121,11 +123,34 @@ function Navbar() {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
-  const handleClick = (e, label) => {
-    if (label === 'About Us' || label === 'Services' || label === 'Industries') {
-      e.preventDefault();
-      setActiveDropdown((prev) => (prev === label ? null : label));
+  const handleNavClick = (e, link) => {
+    if (link.label === 'About Us' || link.label === 'Services' || link.label === 'Industries') {
+      // Allow single click to navigate directly or open dropdown
+      if (link.label === 'About Us') {
+        navigate('/about');
+        setActiveDropdown(null);
+        setMobileOpen(false);
+        return;
+      }
     }
+    
+    if (link.path.startsWith('/#')) {
+      const targetId = link.path.replace('/#', '');
+      if (window.location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(link.path);
+    }
+    setActiveDropdown(null);
+    setMobileOpen(false);
   };
 
   const isDropdownOpen = activeDropdown === 'About Us' || activeDropdown === 'Services' || activeDropdown === 'Industries';
@@ -170,9 +195,13 @@ function Navbar() {
                 <p className="r4m-mega__desc">
                   We connect businesses with the right talent through workforce solutions tailored to their needs.
                 </p>
-                <a href="#about" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
+                <Link 
+                  to="/about" 
+                  className="r4m-mega__btn" 
+                  onClick={() => setActiveDropdown(null)}
+                >
                   Learn More
-                </a>
+                </Link>
               </div>
             )}
 
@@ -190,7 +219,17 @@ function Navbar() {
                 <p className="r4m-mega__desc">
                   We connect businesses with the right talent through workforce solutions tailored to their needs.
                 </p>
-                <a href="#services" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
+                <a 
+                  href="/#services" 
+                  className="r4m-mega__btn" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveDropdown(null);
+                    navigate('/#services');
+                    const el = document.getElementById('services');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Explore our services
                 </a>
               </div>
@@ -210,7 +249,17 @@ function Navbar() {
                 <p className="r4m-mega__desc">
                   We connect businesses with the right talent through workforce solutions tailored to their needs.
                 </p>
-                <a href="#industries" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
+                <a 
+                  href="/#industries" 
+                  className="r4m-mega__btn" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveDropdown(null);
+                    navigate('/#industries');
+                    const el = document.getElementById('industries');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Explore Industries
                 </a>
               </div>
@@ -224,9 +273,17 @@ function Navbar() {
               {getDropdownItems().map((item, idx) => (
                 <a 
                   key={idx} 
-                  href={item.href} 
+                  href={item.path} 
                   className="r4m-mega__item"
-                  onClick={() => setActiveDropdown(null)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveDropdown(null);
+                    if (item.path.startsWith('/about')) {
+                      navigate('/about');
+                    } else {
+                      navigate('/');
+                    }
+                  }}
                 >
                   <h4 className="r4m-mega__item-title">{item.title}</h4>
                   <p className="r4m-mega__item-desc">{item.desc}</p>
@@ -240,9 +297,9 @@ function Navbar() {
 
       {/* Main Floating Navbar */}
       <header className={`r4m-nav ${isDropdownOpen ? 'is-dropdown-open' : ''}`}>
-        <a href="#home" className="r4m-logo">
+        <Link to="/" className="r4m-logo">
           <img src={r4mLogo} alt="R4M Talent Solutions Logo" className="r4m-logo__img" />
-        </a>
+        </Link>
 
         <nav className={`r4m-menu ${mobileOpen ? 'is-open' : ''}`}>
           {NAV_LINKS.map((link) => (
@@ -253,9 +310,9 @@ function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <a 
-                href={link.href} 
+                href={link.path} 
                 className={`r4m-menu__link ${activeDropdown === link.label ? 'is-active' : ''}`}
-                onClick={(e) => handleClick(e, link.label)}
+                onClick={(e) => handleNavClick(e, link)}
               >
                 {link.label}
                 {link.hasDropdown && <i className="bi bi-chevron-down r4m-chevron"></i>}
