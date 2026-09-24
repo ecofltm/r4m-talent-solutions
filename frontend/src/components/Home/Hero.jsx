@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import "../styles/components/Hero.css";
+import Navbar from "../Navbar";
+import "../../styles/components/Hero.css";
 
 const HERO_IMAGES = [
   {
