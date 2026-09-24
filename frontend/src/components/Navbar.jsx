@@ -47,6 +47,49 @@ const SERVICES_ITEMS = [
   },
 ];
 
+const INDUSTRIES_ITEMS = [
+  {
+    title: 'Logistics & Supply Chain',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'Manufacturing',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'Retail & FMCG',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'Hospitality, Food & Beverage',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'Construction & Engineering',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'E-Commerce',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'Financial Services & FinTech',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+  {
+    title: 'Technology & Digital',
+    desc: 'We connect businesses with the right talent through workforce solutions',
+    href: '#industries',
+  },
+];
+
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about', hasDropdown: true },
@@ -62,7 +105,7 @@ function Navbar() {
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = (label) => {
-    if (label === 'About Us' || label === 'Services') {
+    if (label === 'About Us' || label === 'Services' || label === 'Industries') {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       setActiveDropdown(label);
     }
@@ -79,13 +122,20 @@ function Navbar() {
   };
 
   const handleClick = (e, label) => {
-    if (label === 'About Us' || label === 'Services') {
+    if (label === 'About Us' || label === 'Services' || label === 'Industries') {
       e.preventDefault();
       setActiveDropdown((prev) => (prev === label ? null : label));
     }
   };
 
-  const isDropdownOpen = activeDropdown === 'About Us' || activeDropdown === 'Services';
+  const isDropdownOpen = activeDropdown === 'About Us' || activeDropdown === 'Services' || activeDropdown === 'Industries';
+
+  const getDropdownItems = () => {
+    if (activeDropdown === 'About Us') return ABOUT_ITEMS;
+    if (activeDropdown === 'Services') return SERVICES_ITEMS;
+    if (activeDropdown === 'Industries') return INDUSTRIES_ITEMS;
+    return [];
+  };
 
   return (
     <>
@@ -146,12 +196,32 @@ function Navbar() {
               </div>
             )}
 
+            {/* Left Featured Card for Industries */}
+            {activeDropdown === 'Industries' && (
+              <div className="r4m-mega__featured">
+                <div className="r4m-mega__img-wrapper">
+                  <img 
+                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" 
+                    alt="R4M Industries" 
+                    className="r4m-mega__img"
+                  />
+                </div>
+                <span className="r4m-mega__category">INDUSTRIES</span>
+                <p className="r4m-mega__desc">
+                  We connect businesses with the right talent through workforce solutions tailored to their needs.
+                </p>
+                <a href="#industries" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
+                  Explore Industries
+                </a>
+              </div>
+            )}
+
             {/* Vertical Divider Line */}
             <div className="r4m-mega__divider"></div>
 
-            {/* Right 2x2 Grid */}
+            {/* Right Grid */}
             <div className="r4m-mega__grid">
-              {(activeDropdown === 'About Us' ? ABOUT_ITEMS : SERVICES_ITEMS).map((item, idx) => (
+              {getDropdownItems().map((item, idx) => (
                 <a 
                   key={idx} 
                   href={item.href} 
