@@ -11,7 +11,7 @@ const ABOUT_ITEMS = [
   {
     title: 'Our Mission and Vision',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    path: '/about#vision',
+    path: '/mission-vision',
   },
   {
     title: 'Our Target Market',
@@ -278,7 +278,9 @@ function Navbar() {
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(null);
-                    if (item.path.startsWith('/about')) {
+                    if (item.path === '/mission-vision') {
+                      navigate('/mission-vision');
+                    } else if (item.path.startsWith('/about')) {
                       navigate('/about');
                     } else {
                       navigate('/');
