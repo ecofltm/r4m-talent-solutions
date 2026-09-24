@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import AboutHero from '../components/About/AboutHero';
 import YourBusinessOurPeople from '../components/About/YourBusinessOurPeople';
 import Vision from '../components/Home/Vision';
-import MoveForwardCTA from '../components/MoveForwardCTA';
+import AboutCTA from '../components/About/AboutCTA';
 import Footer from '../components/Footer';
 
 export default function AboutUsPage() {
@@ -16,7 +16,7 @@ export default function AboutUsPage() {
         <AboutHero />
         <YourBusinessOurPeople />
         <Vision />
-        <MoveForwardCTA />
+        <AboutCTA />
       </main>
       <Footer />
     </>
