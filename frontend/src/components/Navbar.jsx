@@ -1,6 +1,29 @@
 import { useState, useRef } from 'react';
 import r4mLogo from '../assets/r4m-logo.png';
 
+const ABOUT_ITEMS = [
+  {
+    title: 'Our Story',
+    desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
+    href: '#about',
+  },
+  {
+    title: 'Our Mission and Vision',
+    desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
+    href: '#vision',
+  },
+  {
+    title: 'Our Target Market',
+    desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
+    href: '#about',
+  },
+  {
+    title: 'Our Core Values',
+    desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
+    href: '#about',
+  },
+];
+
 const SERVICES_ITEMS = [
   {
     title: 'Manpower Outsourcing',
@@ -39,9 +62,9 @@ function Navbar() {
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = (label) => {
-    if (label === 'Services') {
+    if (label === 'About Us' || label === 'Services') {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      setActiveDropdown('Services');
+      setActiveDropdown(label);
     }
   };
 
@@ -56,26 +79,26 @@ function Navbar() {
   };
 
   const handleClick = (e, label) => {
-    if (label === 'Services') {
+    if (label === 'About Us' || label === 'Services') {
       e.preventDefault();
-      setActiveDropdown((prev) => (prev === 'Services' ? null : 'Services'));
+      setActiveDropdown((prev) => (prev === label ? null : label));
     }
   };
 
-  const isServicesOpen = activeDropdown === 'Services';
+  const isDropdownOpen = activeDropdown === 'About Us' || activeDropdown === 'Services';
 
   return (
     <>
       {/* Background Overlay with Backdrop Blur for Content Below */}
-      {isServicesOpen && (
+      {isDropdownOpen && (
         <div 
           className="r4m-mega-overlay" 
           onClick={() => setActiveDropdown(null)}
         />
       )}
 
-      {/* Services Mega Dropdown Container spanning to the TOP of screen */}
-      {isServicesOpen && (
+      {/* Mega Dropdown Container spanning to the TOP of screen */}
+      {isDropdownOpen && (
         <div 
           className="r4m-mega-menu"
           onMouseEnter={handleMegaMouseEnter}
@@ -83,30 +106,52 @@ function Navbar() {
         >
           <div className="r4m-mega-menu__container">
             
-            {/* Left Featured Card */}
-            <div className="r4m-mega__featured">
-              <div className="r4m-mega__img-wrapper">
-                <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" 
-                  alt="R4M Services" 
-                  className="r4m-mega__img"
-                />
+            {/* Left Featured Card for About Us */}
+            {activeDropdown === 'About Us' && (
+              <div className="r4m-mega__featured">
+                <div className="r4m-mega__img-wrapper">
+                  <img 
+                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" 
+                    alt="About R4M" 
+                    className="r4m-mega__img"
+                  />
+                </div>
+                <span className="r4m-mega__category">ABOUT US</span>
+                <p className="r4m-mega__desc">
+                  We connect businesses with the right talent through workforce solutions tailored to their needs.
+                </p>
+                <a href="#about" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
+                  Learn More
+                </a>
               </div>
-              <span className="r4m-mega__category">SERVICES</span>
-              <p className="r4m-mega__desc">
-                We connect businesses with the right talent through workforce solutions tailored to their needs.
-              </p>
-              <a href="#services" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
-                Explore our services
-              </a>
-            </div>
+            )}
+
+            {/* Left Featured Card for Services */}
+            {activeDropdown === 'Services' && (
+              <div className="r4m-mega__featured">
+                <div className="r4m-mega__img-wrapper">
+                  <img 
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" 
+                    alt="R4M Services" 
+                    className="r4m-mega__img"
+                  />
+                </div>
+                <span className="r4m-mega__category">SERVICES</span>
+                <p className="r4m-mega__desc">
+                  We connect businesses with the right talent through workforce solutions tailored to their needs.
+                </p>
+                <a href="#services" className="r4m-mega__btn" onClick={() => setActiveDropdown(null)}>
+                  Explore our services
+                </a>
+              </div>
+            )}
 
             {/* Vertical Divider Line */}
             <div className="r4m-mega__divider"></div>
 
-            {/* Right 2x2 Services Grid */}
+            {/* Right 2x2 Grid */}
             <div className="r4m-mega__grid">
-              {SERVICES_ITEMS.map((item, idx) => (
+              {(activeDropdown === 'About Us' ? ABOUT_ITEMS : SERVICES_ITEMS).map((item, idx) => (
                 <a 
                   key={idx} 
                   href={item.href} 
@@ -124,7 +169,7 @@ function Navbar() {
       )}
 
       {/* Main Floating Navbar */}
-      <header className={`r4m-nav ${isServicesOpen ? 'is-dropdown-open' : ''}`}>
+      <header className={`r4m-nav ${isDropdownOpen ? 'is-dropdown-open' : ''}`}>
         <a href="#home" className="r4m-logo">
           <img src={r4mLogo} alt="R4M Talent Solutions Logo" className="r4m-logo__img" />
         </a>
