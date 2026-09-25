@@ -1,196 +1,251 @@
 /* =========================================================
-   MISSION & VISION DETAILS SECTION
+   OUR MISSION & VISION SHOWCASE
 ========================================================= */
 
-.r4m-mv-details {
+.r4m-mv-showcase {
   width: 100%;
+  background: #ffffff;
   font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
-.r4m-mv-section {
-  padding: 100px 20px;
+/* ---------------------------------------------------------
+   1. OUR MISSION ASYMMETRIC PHOTO GALLERY
+--------------------------------------------------------- */
+.r4m-mission-gallery {
+  width: 100%;
+  background: #ffffff;
+  padding: 95px 20px 115px;
 }
 
-.r4m-mv-container {
+.r4m-mission-gallery__container {
   max-width: 1220px;
   margin: 0 auto;
 }
 
-.r4m-mv__tag {
+.r4m-mission-gallery__tag {
   color: #f37021;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 800;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   display: block;
 }
 
-/* 1. Mission Section */
-.r4m-mv-mission {
-  background: #ffffff;
+.r4m-mission-gallery__headline-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 50px;
 }
 
-.r4m-mv-mission__grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 65px;
-  align-items: center;
+.r4m-mission-gallery__quote {
+  font-size: 42px;
+  color: #444444;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.r4m-mv-mission__title {
-  font-size: clamp(34px, 4.4vw, 50px);
+.r4m-mission-gallery__title {
+  font-size: clamp(34px, 4.4vw, 54px);
   font-weight: 900;
-  color: #111111;
   line-height: 1.15;
-  margin: 0 0 22px 0;
+  margin: 0;
   letter-spacing: -0.5px;
 }
 
-.r4m-mv-mission__desc {
-  font-size: 15px;
-  color: #444444;
-  line-height: 1.65;
-  margin-bottom: 18px;
-  font-weight: 400;
+.r4m-mission-gallery__title .black {
+  color: #0e0e0e;
 }
 
-.r4m-mv-mission__media {
+.r4m-mission-gallery__title .orange {
+  color: #f37021;
+}
+
+/* Staggered Gallery Grid */
+.r4m-mission-gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1.1fr 1.1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+  align-items: start;
+}
+
+.r4m-mission-gallery__item {
   width: 100%;
-  height: 440px;
-  background: #e0e0e0;
   overflow: hidden;
+  background: #e8e8e8;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.r4m-mv-mission__img {
+.r4m-mission-gallery__item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
 }
 
-/* 2. Vision Section */
-.r4m-mv-vision {
-  background: #111113;
+.r4m-mission-gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+.r4m-mission-gallery__item--1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  height: 380px;
+}
+
+.r4m-mission-gallery__item--2 {
+  grid-column: 2;
+  grid-row: 1;
+  height: 185px;
+}
+
+.r4m-mission-gallery__item--3 {
+  grid-column: 2;
+  grid-row: 2;
+  height: 185px;
+}
+
+.r4m-mission-gallery__item--4 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  height: 395px;
+  margin-top: -15px;
+}
+
+.r4m-mission-gallery__item--5 {
+  grid-column: 4;
+  grid-row: 1;
+  height: 220px;
+}
+
+.r4m-mission-gallery__item--6 {
+  grid-column: 4;
+  grid-row: 2;
+  height: 150px;
+}
+
+
+/* ---------------------------------------------------------
+   2. OUR VISION BANNER (MATCHING MISSION TEXT SIZE & QUOTE)
+--------------------------------------------------------- */
+.r4m-vision-clean-banner {
+  width: 100%;
+  background: #3b3c3e;
+  padding: 95px 20px 105px;
   color: #ffffff;
-  padding: 110px 20px;
-  text-align: center;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
 }
 
-.r4m-mv-vision__title {
-  font-size: clamp(36px, 4.8vw, 56px);
-  font-weight: 900;
-  color: #ffffff;
-  line-height: 1.15;
-  margin: 0 0 24px 0;
-  letter-spacing: -0.5px;
-}
-
-.r4m-mv-vision__title .orange-italic {
-  color: #f37021;
-  font-style: italic;
-}
-
-.r4m-mv-vision__title .white-italic {
-  color: #d0d0d0;
-  font-style: italic;
-}
-
-.r4m-mv-vision__subtitle {
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.65;
-  max-width: 720px;
+.r4m-vision-clean-banner__container {
+  max-width: 1220px;
   margin: 0 auto;
-}
-
-/* 3. Core Pillars Section */
-.r4m-mv-pillars {
-  background: #f8f9fa;
-  color: #111111;
-}
-
-.r4m-mv-pillars__title {
-  font-size: clamp(32px, 4vw, 44px);
-  font-weight: 900;
-  color: #111111;
-  margin: 0 0 10px 0;
-}
-
-.r4m-mv-pillars__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  margin-top: 48px;
-}
-
-.r4m-mv-pillar-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 36px 28px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
-.r4m-mv-pillar-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-  border-color: #f37021;
-}
-
-.r4m-mv-pillar-card__icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(243, 112, 33, 0.12);
+.r4m-vision-clean-banner__tag {
   color: #f37021;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.r4m-mv-pillar-card__title {
-  font-size: 18px;
+  font-size: 13.5px;
   font-weight: 800;
-  color: #111111;
-  margin: 0 0 12px 0;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
 }
 
-.r4m-mv-pillar-card__desc {
-  font-size: 14px;
-  color: #555555;
-  line-height: 1.6;
+.r4m-vision-clean-banner__headline-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.r4m-vision-clean-banner__quote {
+  font-size: 42px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.r4m-vision-clean-banner__statement {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
   margin: 0;
+  max-width: 1100px;
 }
 
-/* Responsive */
+.r4m-vision-clean-banner__statement .orange-text {
+  color: #f37021;
+  font-weight: 900;
+}
+
+.r4m-vision-clean-banner__btn {
+  background: #f37021;
+  color: #ffffff;
+  padding: 16px 42px;
+  border-radius: 0px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  box-shadow: none;
+}
+
+.r4m-vision-clean-banner__btn:hover {
+  background: #e05e10;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
 @media (max-width: 992px) {
-  .r4m-mv-mission__grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .r4m-mission-gallery {
+    padding: 60px 20px;
   }
 
-  .r4m-mv-mission__media {
-    height: 320px;
-  }
-
-  .r4m-mv-pillars__grid {
+  .r4m-mission-gallery__grid {
     grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .r4m-mission-gallery__item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 220px !important;
+    margin: 0 !important;
+  }
+
+  .r4m-vision-clean-banner {
+    padding: 65px 20px;
+  }
+
+  .r4m-vision-clean-banner__btn {
+    width: 100%;
+    padding: 16px 20px;
   }
 }
 
 @media (max-width: 576px) {
-  .r4m-mv-pillars__grid {
+  .r4m-mission-gallery__grid {
     grid-template-columns: 1fr;
-  }
-
-  .r4m-mv-section {
-    padding: 60px 20px;
   }
 }
