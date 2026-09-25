@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../styles/components/Insights.css";
 
 const INSIGHTS_DATA = [
@@ -7,15 +8,15 @@ const INSIGHTS_DATA = [
     title: "Hiring & Workforce Insights",
     description: "Practical perspectives on recruitment, workforce planning, and business growth.",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
-    href: "#insights-businesses",
+    link: "/insights?category=For Businesses",
   },
   {
     id: "talents",
-    badge: "For Talents",
-    title: "Career Advice",
+    badge: "For Candidates",
+    title: "Career Advice & Candidate Growth",
     description: "Practical perspectives on career growth, resume building, and job navigation.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
-    href: "#insights-talents",
+    link: "/insights?category=For Candidates",
   },
 ];
 
@@ -48,9 +49,9 @@ export default function Insights() {
               <div className="r4m-insight-card__content">
                 <h3 className="r4m-insight-card__title">{item.title}</h3>
                 <p className="r4m-insight-card__desc">{item.description}</p>
-                <a href={item.href} className="r4m-insight-card__link">
+                <Link to={item.link} className="r4m-insight-card__link">
                   Read more
-                </a>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import r4mLogo from '../assets/r4m-logo.png';
 import '../styles/components/Footer.css';
 
@@ -10,9 +11,9 @@ export default function Footer() {
           <h2 className="r4m-footer-cta__title">
             Ready to build a<br />reliable team?
           </h2>
-          <a href="#contact" className="r4m-footer-cta__btn">
+          <Link to="/contact" className="r4m-footer-cta__btn">
             CONTACT US
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -23,17 +24,19 @@ export default function Footer() {
             
             {/* Column 1: Logo & Branding */}
             <div className="r4m-footer__col r4m-footer__col--brand">
-              <a href="#home">
+              <Link to="/">
                 <img src={r4mLogo} alt="R4M Talent Solutions" className="r4m-footer__logo" />
-              </a>
+              </Link>
             </div>
 
             {/* Column 2: Navigation Links */}
             <div className="r4m-footer__col">
               <ul className="r4m-footer__links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Explore Services</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/jobs">Career Opportunities</Link></li>
+                <li><Link to="/insights">Insights & Articles</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
 

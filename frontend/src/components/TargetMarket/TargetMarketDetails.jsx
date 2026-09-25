@@ -1,0 +1,252 @@
+import "../../styles/components/TargetMarketDetails.css";
+
+const CLIENT_ITEMS = [
+  {
+    icon: "bi-graph-up-arrow",
+    title: "Growing Businesses"
+  },
+  {
+    icon: "bi-buildings",
+    title: "Established Corporations"
+  },
+  {
+    icon: "bi-people",
+    title: "High-Volume Employers"
+  },
+  {
+    icon: "bi-arrows-angle-expand",
+    title: "Organizations Transforming or Expanding"
+  },
+  {
+    icon: "bi-person-check",
+    title: "Companies Strengthening Recruitment"
+  }
+];
+
+const CANDIDATE_ITEMS = [
+  {
+    icon: "bi-person-badge",
+    title: "Frontline & Skilled Workers"
+  },
+  {
+    icon: "bi-mortarboard",
+    title: "Early-Career Talent"
+  },
+  {
+    icon: "bi-briefcase",
+    title: "Experienced Professionals"
+  },
+  {
+    icon: "bi-star",
+    title: "Senior Leaders & Executives"
+  }
+];
+
+const INDUSTRIES_SERVED = [
+  {
+    title: "Logistics & Supply Chain",
+    icon: "bi-truck",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Manufacturing",
+    icon: "bi-gear-fill",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Retail & FMCG",
+    icon: "bi-cart-fill",
+    image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Hospitality, Food & Beverage",
+    icon: "bi-cup-hot-fill",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Construction & Engineering",
+    icon: "bi-hammer",
+    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "E-Commerce",
+    icon: "bi-bag-check-fill",
+    image: "https://images.unsplash.com/photo-1556742049-0a67daf64f42?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Financial Services & FinTech",
+    icon: "bi-graph-up-arrow",
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Technology & Digital",
+    icon: "bi-display",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop"
+  }
+];
+
+export default function TargetMarketDetails() {
+  return (
+    <>
+      {/* Top White Section: Two Audiences & Organizations/Individuals */}
+      <section className="r4m-tm-details">
+        <div className="r4m-tm-details__container">
+          
+          {/* Top Header Block */}
+          <div className="r4m-tm-details__header">
+            <span className="r4m-tm-details__tag">OUR TARGET MARKETS</span>
+            <h2 className="r4m-tm-details__title">
+              Two Audiences. <span className="orange-text">One Purpose.</span>
+            </h2>
+          </div>
+
+          {/* Dual Hero Cards Row */}
+          <div className="r4m-tm-cards-grid">
+            
+            {/* Card 1: For Clients */}
+            <div className="r4m-tm-card-hero r4m-tm-card-hero--client">
+              <div className="r4m-tm-card-hero__stripe r4m-tm-card-hero__stripe--left"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" 
+                alt="For Clients" 
+                className="r4m-tm-card-hero__bg"
+              />
+              <div className="r4m-tm-card-hero__overlay"></div>
+              
+              <div className="r4m-tm-card-hero__content">
+                <span className="r4m-tm-card-hero__tag">FOR CLIENTS</span>
+                <h3 className="r4m-tm-card-hero__title">
+                  Businesses that know the right people make the difference.
+                </h3>
+                <p className="r4m-tm-card-hero__desc">
+                  Find skilled, qualified people for your workforce needs—at every stage of growth.
+                </p>
+                <a href="/#contact" className="r4m-tm-card-hero__btn">
+                  Explore Client Solutions <i className="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: For Candidates */}
+            <div className="r4m-tm-card-hero r4m-tm-card-hero--candidate">
+              <div className="r4m-tm-card-hero__stripe r4m-tm-card-hero__stripe--right"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80" 
+                alt="For Candidates" 
+                className="r4m-tm-card-hero__bg"
+              />
+              <div className="r4m-tm-card-hero__overlay"></div>
+              
+              <div className="r4m-tm-card-hero__content">
+                <span className="r4m-tm-card-hero__tag">FOR CANDIDATES</span>
+                <h3 className="r4m-tm-card-hero__title">
+                  Talent at every stage. Opportunities that move lives forward.
+                </h3>
+                <p className="r4m-tm-card-hero__desc">
+                  R4M Talent Solutions connects people with opportunities where they can contribute, grow, and build better futures.
+                </p>
+                <a href="/#jobs" className="r4m-tm-card-hero__btn">
+                  Explore Opportunities <i className="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Two Columns Section */}
+          <div className="r4m-tm-columns-grid">
+            
+            {/* Left Column: Organizations */}
+            <div className="r4m-tm-col">
+              <span className="r4m-tm-col__tag">OUR SOLUTIONS ARE DESIGNED FOR:</span>
+              <h2 className="r4m-tm-col__title">Organizations</h2>
+              <p className="r4m-tm-col__desc">
+                R4M Talent Solutions partners with organizations of different sizes and stages of growth—from emerging businesses building their teams to established companies strengthening and scaling their workforce.
+              </p>
+
+              <div className="r4m-tm-list">
+                {CLIENT_ITEMS.map((item, idx) => (
+                  <div key={idx} className="r4m-tm-pill">
+                    <div className="r4m-tm-pill__icon">
+                      <i className={`bi ${item.icon}`}></i>
+                    </div>
+                    <span className="r4m-tm-pill__text">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Individuals */}
+            <div className="r4m-tm-col">
+              <span className="r4m-tm-col__tag">WE CREATE OPPORTUNITIES FOR:</span>
+              <h2 className="r4m-tm-col__title">Individuals</h2>
+              <p className="r4m-tm-col__desc">
+                From individuals entering the workforce to experienced professionals and senior leaders ready for their next challenge, we help candidates find opportunities that match their skills, experience, ambitions, and potential.
+              </p>
+
+              <div className="r4m-tm-list">
+                {CANDIDATE_ITEMS.map((item, idx) => (
+                  <div key={idx} className="r4m-tm-pill">
+                    <div className="r4m-tm-pill__icon">
+                      <i className={`bi ${item.icon}`}></i>
+                    </div>
+                    <span className="r4m-tm-pill__text">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Separate Dedicated Grey Section: Industries We Serve */}
+      <section className="r4m-tm-industries-section">
+        <div className="r4m-tm-industries-container">
+          
+          <div className="r4m-tm-industries__header">
+            <span className="r4m-tm-industries__tag">OUR EXPERTISE</span>
+            <h2 className="r4m-tm-industries__title">
+              Industries We <span className="orange-text">Serve</span>
+            </h2>
+            <p className="r4m-tm-industries__subtitle">
+              We work with organizations and talent across multiple industries to create lasting opportunities.
+            </p>
+          </div>
+
+          <div className="r4m-tm-industries__grid">
+            {INDUSTRIES_SERVED.map((ind, idx) => (
+              <div key={idx} className="r4m-tm-ind-card">
+                
+                {/* Image Banner */}
+                <div className="r4m-tm-ind-card__banner">
+                  <img 
+                    src={ind.image} 
+                    alt={ind.title} 
+                    className="r4m-tm-ind-card__img" 
+                  />
+                </div>
+
+                {/* Overlapping Orange Icon Badge */}
+                <div className="r4m-tm-ind-card__badge">
+                  <i className={`bi ${ind.icon}`}></i>
+                </div>
+
+                {/* Bottom Title Bar & Arrow */}
+                <div className="r4m-tm-ind-card__bar">
+                  <h3 className="r4m-tm-ind-card__title">{ind.title}</h3>
+                  <span className="r4m-tm-ind-card__arrow" aria-label="Learn more">
+                    <i className="bi bi-arrow-right"></i>
+                  </span>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
+}

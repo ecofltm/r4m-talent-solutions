@@ -22,7 +22,7 @@ export default function AboutHero() {
         </div>
       </div>
 
-      {/* Geometric Design Accents matching reference UI */}
+      {/* Geometric Accents */}
       <div className="r4m-about-hero__accent-grey"></div>
       <div className="r4m-about-hero__accent-orange"></div>
     </section>

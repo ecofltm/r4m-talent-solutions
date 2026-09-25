@@ -1,0 +1,145 @@
+/* =========================================================
+   R-E-F-O-R-M CORE VALUES SHOWCASE (LIGHT THEME)
+========================================================= */
+
+.r4m-reform-values {
+  width: 100%;
+  background: #ffffff;
+  padding: 100px 20px 110px;
+  font-family: 'Montserrat', sans-serif;
+  color: #111111;
+}
+
+.r4m-reform-values__container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Left Column: Image Block */
+.r4m-reform-values__media {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  background: #f4f4f5;
+  overflow: hidden;
+}
+
+.r4m-reform-values__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Column: R-E-F-O-R-M Items */
+.r4m-reform-values__content {
+  background: #ffffff;
+  padding: 60px 0 60px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+}
+
+/* Header & Orange Tag */
+.r4m-reform-values__header {
+  margin-bottom: 8px;
+}
+
+.r4m-reform-values__tag {
+  color: #f37021;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* R-E-F-O-R-M List */
+.r4m-reform-values__list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Item Row */
+.r4m-reform-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Orange Square Letter Badge */
+.r4m-reform-item__badge {
+  background: #f37021;
+  color: #ffffff;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 0px;
+  margin-top: 2px;
+}
+
+/* Item Body */
+.r4m-reform-item__title {
+  color: #111111;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.r4m-reform-item__desc {
+  color: #444444;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  max-width: 620px;
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+========================================================= */
+
+@media (max-width: 992px) {
+  .r4m-reform-values {
+    padding: 70px 20px 80px;
+  }
+
+  .r4m-reform-values__container {
+    grid-template-columns: 1fr;
+  }
+
+  .r4m-reform-values__media {
+    min-height: 360px;
+    height: 360px;
+  }
+
+  .r4m-reform-values__content {
+    padding: 40px 0 0 0;
+    gap: 24px;
+  }
+
+  .r4m-reform-item__badge {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+
+  .r4m-reform-item__title {
+    font-size: 19px;
+  }
+}
+

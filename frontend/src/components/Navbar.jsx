@@ -6,7 +6,7 @@ const ABOUT_ITEMS = [
   {
     title: 'Our Story',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    path: '/about#story',
+    path: '/our-story',
   },
   {
     title: 'Our Mission and Vision',
@@ -16,12 +16,12 @@ const ABOUT_ITEMS = [
   {
     title: 'Our Target Market',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    path: '/about#target-market',
+    path: '/target-market',
   },
   {
     title: 'Our Core Values',
     desc: 'We connect businesses with the right talent through workforce solutions tailored to their needs.',
-    path: '/about#core-values',
+    path: '/core-values',
   },
 ];
 
@@ -96,8 +96,8 @@ const NAV_LINKS = [
   { label: 'About Us', path: '/about', hasDropdown: true },
   { label: 'Services', path: '/#services', hasDropdown: true },
   { label: 'Industries', path: '/#industries', hasDropdown: true },
-  { label: 'Jobs', path: '/#jobs' },
-  { label: 'Contact Us', path: '/#contact' },
+  { label: 'Jobs', path: '/jobs' },
+  { label: 'Contact Us', path: '/contact' },
 ];
 
 function Navbar() {
@@ -278,8 +278,14 @@ function Navbar() {
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(null);
-                    if (item.path === '/mission-vision') {
+                    if (item.path === '/our-story') {
+                      navigate('/our-story');
+                    } else if (item.path === '/mission-vision') {
                       navigate('/mission-vision');
+                    } else if (item.path === '/core-values') {
+                      navigate('/core-values');
+                    } else if (item.path === '/target-market') {
+                      navigate('/target-market');
                     } else if (item.path.startsWith('/about')) {
                       navigate('/about');
                     } else {
